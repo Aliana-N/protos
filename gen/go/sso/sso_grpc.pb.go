@@ -195,3 +195,181 @@ var Auth_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "sso/sso.proto",
 }
+
+const (
+	Permission_DeleteUser_FullMethodName = "/auto.Permission/DeleteUser"
+	Permission_EditRole_FullMethodName   = "/auto.Permission/EditRole"
+	Permission_EditLogin_FullMethodName  = "/auto.Permission/EditLogin"
+)
+
+// PermissionClient is the client API for Permission service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type PermissionClient interface {
+	DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
+	EditRole(ctx context.Context, in *EditRoleRequest, opts ...grpc.CallOption) (*EditRoleResponse, error)
+	EditLogin(ctx context.Context, in *EditLoginRequest, opts ...grpc.CallOption) (*EditLoginResponse, error)
+}
+
+type permissionClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewPermissionClient(cc grpc.ClientConnInterface) PermissionClient {
+	return &permissionClient{cc}
+}
+
+func (c *permissionClient) DeleteUser(ctx context.Context, in *DeleteUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteUserResponse)
+	err := c.cc.Invoke(ctx, Permission_DeleteUser_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *permissionClient) EditRole(ctx context.Context, in *EditRoleRequest, opts ...grpc.CallOption) (*EditRoleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EditRoleResponse)
+	err := c.cc.Invoke(ctx, Permission_EditRole_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *permissionClient) EditLogin(ctx context.Context, in *EditLoginRequest, opts ...grpc.CallOption) (*EditLoginResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EditLoginResponse)
+	err := c.cc.Invoke(ctx, Permission_EditLogin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// PermissionServer is the server API for Permission service.
+// All implementations must embed UnimplementedPermissionServer
+// for forward compatibility.
+type PermissionServer interface {
+	DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error)
+	EditRole(context.Context, *EditRoleRequest) (*EditRoleResponse, error)
+	EditLogin(context.Context, *EditLoginRequest) (*EditLoginResponse, error)
+	mustEmbedUnimplementedPermissionServer()
+}
+
+// UnimplementedPermissionServer must be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedPermissionServer struct{}
+
+func (UnimplementedPermissionServer) DeleteUser(context.Context, *DeleteUserRequest) (*DeleteUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
+}
+func (UnimplementedPermissionServer) EditRole(context.Context, *EditRoleRequest) (*EditRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EditRole not implemented")
+}
+func (UnimplementedPermissionServer) EditLogin(context.Context, *EditLoginRequest) (*EditLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EditLogin not implemented")
+}
+func (UnimplementedPermissionServer) mustEmbedUnimplementedPermissionServer() {}
+func (UnimplementedPermissionServer) testEmbeddedByValue()                    {}
+
+// UnsafePermissionServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to PermissionServer will
+// result in compilation errors.
+type UnsafePermissionServer interface {
+	mustEmbedUnimplementedPermissionServer()
+}
+
+func RegisterPermissionServer(s grpc.ServiceRegistrar, srv PermissionServer) {
+	// If the following call pancis, it indicates UnimplementedPermissionServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&Permission_ServiceDesc, srv)
+}
+
+func _Permission_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PermissionServer).DeleteUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Permission_DeleteUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PermissionServer).DeleteUser(ctx, req.(*DeleteUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Permission_EditRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EditRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PermissionServer).EditRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Permission_EditRole_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PermissionServer).EditRole(ctx, req.(*EditRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Permission_EditLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EditLoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PermissionServer).EditLogin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Permission_EditLogin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PermissionServer).EditLogin(ctx, req.(*EditLoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Permission_ServiceDesc is the grpc.ServiceDesc for Permission service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Permission_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "auto.Permission",
+	HandlerType: (*PermissionServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "DeleteUser",
+			Handler:    _Permission_DeleteUser_Handler,
+		},
+		{
+			MethodName: "EditRole",
+			Handler:    _Permission_EditRole_Handler,
+		},
+		{
+			MethodName: "EditLogin",
+			Handler:    _Permission_EditLogin_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "sso/sso.proto",
+}

@@ -37,3 +37,36 @@ message IsAdminRequest{
 message IsAdminResponse{
     bool is_admin=1;
 }
+
+service Permission{
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc EditRole(EditRoleRequest) returns (EditRoleResponse);
+    rpc EditLogin(EditLoginRequest) returns (EditLoginResponse);
+}
+
+message DeleteUserRequest{
+    string token=1;
+    int64 user_id=2;
+}
+
+message DeleteUserResponse{
+    string result=1;
+}
+
+message EditRoleRequest{
+    string token=1;
+    int64 user_id=2;
+}
+
+message EditRoleResponse{
+    string result=1;
+}
+
+message EditLoginRequest{
+    string token=1;
+    int64 user_id=2;   
+}
+
+message EditLoginResponse{
+    string result=1;
+}

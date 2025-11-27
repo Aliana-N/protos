@@ -309,6 +309,294 @@ func (x *IsAdminResponse) GetIsAdmin() bool {
 	return false
 }
 
+type DeleteUserRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteUserRequest) Reset() {
+	*x = DeleteUserRequest{}
+	mi := &file_sso_sso_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteUserRequest) ProtoMessage() {}
+
+func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteUserRequest.ProtoReflect.Descriptor instead.
+func (*DeleteUserRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DeleteUserRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *DeleteUserRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type DeleteUserResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        string                 `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteUserResponse) Reset() {
+	*x = DeleteUserResponse{}
+	mi := &file_sso_sso_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteUserResponse) ProtoMessage() {}
+
+func (x *DeleteUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteUserResponse.ProtoReflect.Descriptor instead.
+func (*DeleteUserResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DeleteUserResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
+type EditRoleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EditRoleRequest) Reset() {
+	*x = EditRoleRequest{}
+	mi := &file_sso_sso_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditRoleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditRoleRequest) ProtoMessage() {}
+
+func (x *EditRoleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditRoleRequest.ProtoReflect.Descriptor instead.
+func (*EditRoleRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *EditRoleRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *EditRoleRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type EditRoleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        string                 `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EditRoleResponse) Reset() {
+	*x = EditRoleResponse{}
+	mi := &file_sso_sso_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditRoleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditRoleResponse) ProtoMessage() {}
+
+func (x *EditRoleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditRoleResponse.ProtoReflect.Descriptor instead.
+func (*EditRoleResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *EditRoleResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
+type EditLoginRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EditLoginRequest) Reset() {
+	*x = EditLoginRequest{}
+	mi := &file_sso_sso_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditLoginRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditLoginRequest) ProtoMessage() {}
+
+func (x *EditLoginRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditLoginRequest.ProtoReflect.Descriptor instead.
+func (*EditLoginRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *EditLoginRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *EditLoginRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type EditLoginResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        string                 `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EditLoginResponse) Reset() {
+	*x = EditLoginResponse{}
+	mi := &file_sso_sso_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditLoginResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditLoginResponse) ProtoMessage() {}
+
+func (x *EditLoginResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditLoginResponse.ProtoReflect.Descriptor instead.
+func (*EditLoginResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *EditLoginResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
 var File_sso_sso_proto protoreflect.FileDescriptor
 
 const file_sso_sso_proto_rawDesc = "" +
@@ -328,11 +616,32 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x0eIsAdminRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\",\n" +
 	"\x0fIsAdminResponse\x12\x19\n" +
-	"\bis_admin\x18\x01 \x01(\bR\aisAdmin2\xab\x01\n" +
+	"\bis_admin\x18\x01 \x01(\bR\aisAdmin\"B\n" +
+	"\x11DeleteUserRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\",\n" +
+	"\x12DeleteUserResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\tR\x06result\"@\n" +
+	"\x0fEditRoleRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\"*\n" +
+	"\x10EditRoleResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\tR\x06result\"A\n" +
+	"\x10EditLoginRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\"+\n" +
+	"\x11EditLoginResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\tR\x06result2\xab\x01\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auto.RegisterRequest\x1a\x16.auto.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auto.LoginRequest\x1a\x13.auto.LoginResponse\x126\n" +
-	"\aIsAdmin\x12\x14.auto.IsAdminRequest\x1a\x15.auto.IsAdminResponseB\x14Z\x12tuzov.sso.v1;ssov1b\x06proto3"
+	"\aIsAdmin\x12\x14.auto.IsAdminRequest\x1a\x15.auto.IsAdminResponse2\xc6\x01\n" +
+	"\n" +
+	"Permission\x12?\n" +
+	"\n" +
+	"DeleteUser\x12\x17.auto.DeleteUserRequest\x1a\x18.auto.DeleteUserResponse\x129\n" +
+	"\bEditRole\x12\x15.auto.EditRoleRequest\x1a\x16.auto.EditRoleResponse\x12<\n" +
+	"\tEditLogin\x12\x16.auto.EditLoginRequest\x1a\x17.auto.EditLoginResponseB\x14Z\x12tuzov.sso.v1;ssov1b\x06proto3"
 
 var (
 	file_sso_sso_proto_rawDescOnce sync.Once
@@ -346,27 +655,39 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 	return file_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_sso_sso_proto_goTypes = []any{
-	(*RegisterRequest)(nil),  // 0: auto.RegisterRequest
-	(*RegisterResponse)(nil), // 1: auto.RegisterResponse
-	(*LoginRequest)(nil),     // 2: auto.LoginRequest
-	(*LoginResponse)(nil),    // 3: auto.LoginResponse
-	(*IsAdminRequest)(nil),   // 4: auto.IsAdminRequest
-	(*IsAdminResponse)(nil),  // 5: auto.IsAdminResponse
+	(*RegisterRequest)(nil),    // 0: auto.RegisterRequest
+	(*RegisterResponse)(nil),   // 1: auto.RegisterResponse
+	(*LoginRequest)(nil),       // 2: auto.LoginRequest
+	(*LoginResponse)(nil),      // 3: auto.LoginResponse
+	(*IsAdminRequest)(nil),     // 4: auto.IsAdminRequest
+	(*IsAdminResponse)(nil),    // 5: auto.IsAdminResponse
+	(*DeleteUserRequest)(nil),  // 6: auto.DeleteUserRequest
+	(*DeleteUserResponse)(nil), // 7: auto.DeleteUserResponse
+	(*EditRoleRequest)(nil),    // 8: auto.EditRoleRequest
+	(*EditRoleResponse)(nil),   // 9: auto.EditRoleResponse
+	(*EditLoginRequest)(nil),   // 10: auto.EditLoginRequest
+	(*EditLoginResponse)(nil),  // 11: auto.EditLoginResponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
-	0, // 0: auto.Auth.Register:input_type -> auto.RegisterRequest
-	2, // 1: auto.Auth.Login:input_type -> auto.LoginRequest
-	4, // 2: auto.Auth.IsAdmin:input_type -> auto.IsAdminRequest
-	1, // 3: auto.Auth.Register:output_type -> auto.RegisterResponse
-	3, // 4: auto.Auth.Login:output_type -> auto.LoginResponse
-	5, // 5: auto.Auth.IsAdmin:output_type -> auto.IsAdminResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: auto.Auth.Register:input_type -> auto.RegisterRequest
+	2,  // 1: auto.Auth.Login:input_type -> auto.LoginRequest
+	4,  // 2: auto.Auth.IsAdmin:input_type -> auto.IsAdminRequest
+	6,  // 3: auto.Permission.DeleteUser:input_type -> auto.DeleteUserRequest
+	8,  // 4: auto.Permission.EditRole:input_type -> auto.EditRoleRequest
+	10, // 5: auto.Permission.EditLogin:input_type -> auto.EditLoginRequest
+	1,  // 6: auto.Auth.Register:output_type -> auto.RegisterResponse
+	3,  // 7: auto.Auth.Login:output_type -> auto.LoginResponse
+	5,  // 8: auto.Auth.IsAdmin:output_type -> auto.IsAdminResponse
+	7,  // 9: auto.Permission.DeleteUser:output_type -> auto.DeleteUserResponse
+	9,  // 10: auto.Permission.EditRole:output_type -> auto.EditRoleResponse
+	11, // 11: auto.Permission.EditLogin:output_type -> auto.EditLoginResponse
+	6,  // [6:12] is the sub-list for method output_type
+	0,  // [0:6] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_sso_sso_proto_init() }
@@ -380,9 +701,9 @@ func file_sso_sso_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   12,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_sso_sso_proto_goTypes,
 		DependencyIndexes: file_sso_sso_proto_depIdxs,
