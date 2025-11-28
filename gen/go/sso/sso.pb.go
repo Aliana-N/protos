@@ -505,6 +505,7 @@ type EditLoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -551,6 +552,13 @@ func (x *EditLoginRequest) GetUserId() int64 {
 		return x.UserId
 	}
 	return 0
+}
+
+func (x *EditLoginRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
 }
 
 type EditLoginResponse struct {
@@ -626,10 +634,11 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\x03R\x06userId\"*\n" +
 	"\x10EditRoleResponse\x12\x16\n" +
-	"\x06result\x18\x01 \x01(\tR\x06result\"A\n" +
+	"\x06result\x18\x01 \x01(\tR\x06result\"W\n" +
 	"\x10EditLoginRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\"+\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email\"+\n" +
 	"\x11EditLoginResponse\x12\x16\n" +
 	"\x06result\x18\x01 \x01(\tR\x06result2\xab\x01\n" +
 	"\x04Auth\x129\n" +
