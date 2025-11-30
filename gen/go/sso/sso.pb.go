@@ -409,6 +409,7 @@ type EditRoleRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	IsAdmin       bool                   `protobuf:"varint,3,opt,name=is_admin,json=isAdmin,proto3" json:"is_admin,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -455,6 +456,13 @@ func (x *EditRoleRequest) GetUserId() int64 {
 		return x.UserId
 	}
 	return 0
+}
+
+func (x *EditRoleRequest) GetIsAdmin() bool {
+	if x != nil {
+		return x.IsAdmin
+	}
+	return false
 }
 
 type EditRoleResponse struct {
@@ -629,10 +637,11 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\x03R\x06userId\",\n" +
 	"\x12DeleteUserResponse\x12\x16\n" +
-	"\x06result\x18\x01 \x01(\tR\x06result\"@\n" +
+	"\x06result\x18\x01 \x01(\tR\x06result\"[\n" +
 	"\x0fEditRoleRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\"*\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x19\n" +
+	"\bis_admin\x18\x03 \x01(\bR\aisAdmin\"*\n" +
 	"\x10EditRoleResponse\x12\x16\n" +
 	"\x06result\x18\x01 \x01(\tR\x06result\"W\n" +
 	"\x10EditLoginRequest\x12\x14\n" +
